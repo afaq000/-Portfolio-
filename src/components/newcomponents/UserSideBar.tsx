@@ -1,18 +1,18 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import { useRouter } from "next/router";
 // import Image from '../Image';
-import { RxHamburgerMenu } from 'react-icons/rx';
-import React, { ReactNode } from 'react';
+import { RxHamburgerMenu } from "react-icons/rx";
+import React, { ReactNode } from "react";
 // import ChatSideBar from './ChatSideBar';
-import { MdKeyboardArrowDown } from 'react-icons/md';
-import { Logo } from '../icon/logo';
-import { Speaker } from '../icon/sidebar';
-import Image from './Image';
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { Logo } from "../icon/logo";
+import { Speaker } from "../icon/sidebar";
+import Image from "./Image";
 
 interface SideBarArray {
   icon: ReactNode;
   title: string;
-  id:string;
+  id: string;
 }
 
 interface SideBarProps {
@@ -29,7 +29,6 @@ const UserSideBar: React.FC<SideBarProps> = ({
   const router = useRouter();
   const handleItemClick = () => {};
 
-
   return (
     <div
       id="scroll-1"
@@ -38,21 +37,25 @@ const UserSideBar: React.FC<SideBarProps> = ({
       <div
         className={` w-full sticky flex flex-col items-center justify-center py-2 ${SideBarLogoClassName}`}
       >
-     <Image height={0} width={0} alt='' className=' w-[60%] rounded-full border' src={'/images/profileImage.webp'} />
-          
-          <div className='text-center py-2'>
-            <p>afaq hussain</p>
-            <p>Full Stack Developer</p>
+        <Image
+          height={0}
+          width={0}
+          alt=""
+          className=" w-[60%] rounded-full border"
+          src={"/images/profileImage.webp"}
+        />
 
-          </div>
-           </div>
+        <div className="text-center py-2">
+          <p>afaq hussain</p>
+          <p>Full Stack Developer</p>
+        </div>
+      </div>
       <div
         id="scroll-1"
         className="overflow-y-auto  items-center sm:items-start flex flex-col bg-[#F2F3F7] custom-scrollbar"
       >
         <div className="flex flex-col  bg-[#F2F3F7]">
           <div>
-
             <div className="w-full text-black flex flex-col items-center sm:items-start px-4 sm:px-4 gap-2 lg:gap-4 text-xs  whitespace-nowrap sm:text-base lg:text-base  mt-3 md:mt-5">
               {data.map((item, index) => (
                 <Link
@@ -86,16 +89,18 @@ const UserSideBar: React.FC<SideBarProps> = ({
             <div className="flex sm:w-full px-4 sm:px-5 sm:border-t mt-40 pb-4">
               <div
                 onClick={() => {
-                  const profileSettingUrl = router.pathname.includes('admin')
-                    ? '/admin/feedback'
-                    : '/employee/feedback';
+                  const profileSettingUrl = router.pathname.includes("admin")
+                    ? "/admin/feedback"
+                    : "/employee/feedback";
                   router.push(profileSettingUrl);
                 }}
                 className="flex items-center text-center gap-1 md:gap-3 text-white text-[11px] md:text-xs my-2  cursor-pointer mt-4"
               >
                 {/* <Speaker /> */}
-                <p className="hidden text-black sm:block">© Copyright ©2024 All rights reserved | This template is made with  by Colorlib
-Demo Images: Unsplash.com</p>
+                <p className="hidden text-black sm:block">
+                  © Copyright ©2024 All rights reserved | This template is made
+                  with by Colorlib Demo Images: Unsplash.com
+                </p>
               </div>
             </div>
           </div>
