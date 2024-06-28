@@ -5,36 +5,16 @@ import Navbar from "@/components/Navbar";
 import Aos from "aos";
 
 function Index() {
-  const cards = [
-    {
-      id: 1,
-      role: "Web Developer",
-      borderColor: "#101825",
-      description: "Builds and maintains websites.",
-      imgSrc: "/About/web developer.jpg",
-    },
-    {
-      id: 2,
-      role: "Front-End Developer",
-      borderColor: "#1F2021",
-      description: "Focuses on the visual and interactive aspects of websites.",
-      imgSrc: "/About/Front-end developer.png",
-    },
-    {
-      id: 3,
-      role: "Back-End Developer",
-      borderColor: "#0A1D26",
-      description: "Manages server-side logic and database interactions.",
-      imgSrc: "/About/Back-end_developer-removebg-preview.png",
-    },
-    {
-      id: 4,
-      role: "UI/UX Developer",
-      borderColor: "#171810",
-      description: "Designs user interfaces and enhances user experience.",
-      imgSrc: "/About/UIUX developer.png",
-    },
+
+  const borderColor = "#101825";
+
+  const items = [
+    { id: 1, imgSrc: "About/light Transparent.png", text: "Graphic Design" },
+    { id: 2, imgSrc: "About/light Transparent.png", text: "Graphic Design" },
+    { id: 3, imgSrc: "About/light Transparent.png", text: "Graphic Design" },
+    { id: 4, imgSrc: "About/light Transparent.png", text: "Graphic Design" }
   ];
+  
 
   useEffect(function () {
     Aos.init({ duration: 2000 });
@@ -80,38 +60,24 @@ function Index() {
           </div>
 
           <div className="w-full flex justify-center items-center">
-            <div className="w-full flex justify-between flex-wrap">
-              <div className="w-1/5 px-4 py-4">
-                <div className="">
-
-                </div>
-
-              </div>
-              {/* {cards.map((card) => (
-                <div
-                  key={card.id}
-                  className="w-full md:w-[40%] xmd:w-[30%] lg:w-[20%] relative mt-16 md:mt-20 rounded-lg cursor-pointer bg-white box-shadow1 flex flex-col py-3 px-3 items-center box-shadow1"
-                  style={{
-                    borderColor: card.borderColor,
-                    borderBottomColor: card.borderColor,
-                  }}
-                >
-                  <div className="flex justify-center md:w-1/2 rounded-full">
-                     <img
-                      src={card.imgSrc}
-                      alt={`${card.role} Logo`}
-                      className="object-cover w-1/3 xxs:w-1/5 md:w-1/2 absolute border-[2px] box-shadow1 -top-[40px] sm:-top-[50px] rounded-full"
-                    /> 
-                  </div>
-                  <p className="text-center font-bold py-1 mt-20  md:mt-20 xmd:mt-14 lg:mt-20">
-                    {card.role}
-                  </p>
-                  <p className="text-center py-1">{card.description}</p>
-                </div>
-              ))} */}
-            
+      <div className="w-full flex justify-between flex-wrap">
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className="w-full md:w-[40%] xmd:w-[30%] lg:w-[20%] mt-16 md:mt-20 cursor-pointer bg-white box-shadow1 flex flex-col py-3 px-4"
+            style={{
+              borderColor: borderColor,
+              borderBottomColor: borderColor
+            }}
+          >
+            <div>
+              <img src={item.imgSrc} alt="" className="w-10 h-10" />
             </div>
+            <p className="py-5 mb-5 text-sm">{item.text}</p>
           </div>
+        ))}
+      </div>
+    </div>
         </div>
 
 
