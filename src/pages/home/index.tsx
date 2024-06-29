@@ -6,14 +6,12 @@ import Aos from "aos";
 
 function Index() {
 
-  const borderColor = "#101825";
-
-  const items = [
-    { id: 1, imgSrc: "About/light Transparent.png", text: "Graphic Design" },
-    { id: 2, imgSrc: "About/light Transparent.png", text: "Graphic Design" },
-    { id: 3, imgSrc: "About/light Transparent.png", text: "Graphic Design" },
-    { id: 4, imgSrc: "About/light Transparent.png", text: "Graphic Design" }
-  ];
+const items = [
+  { id: 1, imgSrc: "About/light Transparent.png", text: "Graphic Design", borderBottomColor: "#FFCC33" },
+  { id: 2, imgSrc: "About/Development.png", text: "Web Design", borderBottomColor: "#0373B2" },
+  { id: 3, imgSrc: "About/Software.png", text: "Software", borderBottomColor: "#0E5189" },
+  { id: 4, imgSrc: "About/Application.png", text: "Application", borderBottomColor: "#85DCD9" }
+];
   
 
   useEffect(function () {
@@ -23,7 +21,7 @@ function Index() {
   return (
     <Layout>
       <div
-        className="w-full h-screen text-[#101825] overflow-y-auto overflow-hidden bg-gray-100"
+        className="w-full h-screen text-[#101825] overflow-y-auto overflow-hidden bg-gray-100 pr-10"
         id="scroll-1"
       >
         <div className="w-full h-screen" id="home">
@@ -32,7 +30,7 @@ function Index() {
           </div>
         </div>
 
-        <div className=" w-full px-10 mt-10" id="about">
+        <div className=" w-full px-10  pr-20 mt-10" id="about">
           <div className=" w-full flex flex-col mt-3">
             <div className="about-us-section">
               <p className="text-gray-400 text-xs tracking-[8px] "> ABOUT US</p>
@@ -59,25 +57,27 @@ function Index() {
             </p>
           </div>
 
-          <div className="w-full flex justify-center items-center">
-      <div className="w-full flex justify-between flex-wrap">
-        {items.map((item) => (
-          <div
-            key={item.id}
-            className="w-full md:w-[40%] xmd:w-[30%] lg:w-[20%] mt-16 md:mt-20 cursor-pointer bg-white box-shadow1 flex flex-col py-3 px-4"
-            style={{
-              borderColor: borderColor,
-              borderBottomColor: borderColor
-            }}
-          >
-            <div>
-              <img src={item.imgSrc} alt="" className="w-10 h-10" />
-            </div>
-            <p className="py-5 mb-5 text-sm">{item.text}</p>
-          </div>
-        ))}
+       <div className="w-full flex mb-5 justify-center items-center">
+  <div className="w-full flex justify-between flex-wrap">
+    {items.map((item) => (
+      <div
+        key={item.id}
+        className="w-full md:w-[40%] xmd:w-[30%] lg:w-[20%] mt-16 md:mt-20 cursor-pointer bg-white box-shadow1 flex flex-col py-3 px-4"
+        style={{
+          // borderColor: borderColor,
+          borderBottomColor: item.borderBottomColor,
+          borderBottomWidth: "2px",
+          borderBottomStyle: "solid"
+        }}
+      >
+        <div>
+          <img src={item.imgSrc} alt="Development Bannar" className="w-10 h-10" />
+        </div>
+        <p className="py-5 mb-5 text-sm">{item.text}</p>
       </div>
-    </div>
+    ))}
+  </div>
+</div>
         </div>
 
 
